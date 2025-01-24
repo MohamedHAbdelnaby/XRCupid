@@ -142,8 +142,6 @@ PlayerSettings:
   bundleVersion: 0.1
   preloadedAssets:
   - {fileID: 11400000, guid: 76f6d72732d62374b8299520dbc48ca1, type: 2}
-  - {fileID: 11400000, guid: 01bdf4200fdb76444b20b7f5917149aa, type: 2}
-  - {fileID: -4182889865036698564, guid: 71d109149214e734d8dd513cc8eefc2b, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -744,8 +742,23 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: ISDK_OPENXR_HAND
-    Standalone: ISDK_OPENXR_HAND
+    Android: ISDK_OPENXR_HAND;READY_PLAYER_ME;CC_TOOLS
+    EmbeddedLinux: READY_PLAYER_ME;CC_TOOLS
+    GameCoreScarlett: READY_PLAYER_ME;CC_TOOLS
+    GameCoreXboxOne: READY_PLAYER_ME;CC_TOOLS
+    LinuxHeadlessSimulation: READY_PLAYER_ME;CC_TOOLS
+    Nintendo Switch: READY_PLAYER_ME;CC_TOOLS
+    PS4: READY_PLAYER_ME;CC_TOOLS
+    PS5: READY_PLAYER_ME;CC_TOOLS
+    QNX: READY_PLAYER_ME;CC_TOOLS
+    Stadia: READY_PLAYER_ME;CC_TOOLS
+    Standalone: ISDK_OPENXR_HAND;READY_PLAYER_ME;CC_TOOLS
+    VisionOS: READY_PLAYER_ME;CC_TOOLS
+    WebGL: READY_PLAYER_ME;CC_TOOLS
+    Windows Store Apps: READY_PLAYER_ME;CC_TOOLS
+    XboxOne: READY_PLAYER_ME;CC_TOOLS
+    iPhone: READY_PLAYER_ME;CC_TOOLS
+    tvOS: READY_PLAYER_ME;CC_TOOLS
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
