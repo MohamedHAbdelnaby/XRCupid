@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 95e3f98bce1e71040a44031def11314c
+  productGUID: 46936386b4d6b8d4bbf86cc75d87bd67
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -17,7 +17,7 @@ PlayerSettings:
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
-  m_ShowUnitySplashScreen: 0
+  m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
@@ -141,7 +141,10 @@ PlayerSettings:
   tvOSBundleVersion: 1.0
   bundleVersion: 3.2.0
   preloadedAssets:
-  - {fileID: 11400000, guid: 53d07020cb6a8bd4d83f74ad8e625e02, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 76f6d72732d62374b8299520dbc48ca1, type: 2}
+  - {fileID: 11400000, guid: e27ab232aab67bd4ca9d68fa3af45caf, type: 2}
+  - {fileID: 5956097655307884746, guid: 488684d5c1456e04094e3e4aa365d192, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -162,7 +165,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.Convai.MR
+    Android: com.MITRH.DatePRO
     Standalone: com.Convai.MR
   buildNumber:
     Standalone: 0
