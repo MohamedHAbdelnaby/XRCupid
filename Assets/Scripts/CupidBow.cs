@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CupidBow : MonoBehaviour
@@ -14,6 +15,7 @@ public class CupidBow : MonoBehaviour
     [SerializeField] GameObject heartPrefab;
     private GameObject currentHeartPrefab;
     [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] LineRenderer lineRenderer2;
 
     public float alignmentThreshold = 0.5f; // Threshold for how close the hands should be in the X/Y plane
     public float minDistanceToBeInFront = 0.5f; // Minimum Z-axis distance between the hands to be considered "in front"
@@ -21,6 +23,10 @@ public class CupidBow : MonoBehaviour
     [SerializeField] MeshRenderer bow;
     [SerializeField] Transform end1;
     [SerializeField] Transform end2;
+
+    [SerializeField] SpriteRenderer heartPointer;
+
+    [SerializeField] float speed = 250;
 
     // Update is called once per frame
     void Update()
@@ -71,15 +77,39 @@ public class CupidBow : MonoBehaviour
             {
                 currentHeartPrefab.transform.position = Lhand.position;
             }
+
+            Vector3 direction = (Lhand.position - Rhand.position).normalized;
+
+            currentHeartPrefab.transform.rotation = Quaternion.LookRotation(direction, bow.transform.forward);
+
             lineRenderer.enabled = true;
+            lineRenderer2.enabled = true;
             lineRenderer.SetPosition(0, end1.position);
             lineRenderer.SetPosition(1, Rhand.position);
             lineRenderer.SetPosition(2, end2.position);
+
+            lineRenderer2.SetPosition(0, currentHeartPrefab.transform.position);
+            lineRenderer2.SetPosition(1, Rhand.position);
+
+
+
+            if (Physics.Raycast(Lhand.position + direction * 0.1f, direction, out RaycastHit hit, 10))
+            {
+                heartPointer.enabled = true;
+                heartPointer.transform.position = hit.point;
+                heartPointer.transform.forward = hit.normal;
+            }
+            else
+            {
+                heartPointer.enabled = false;
+            }
         }
         else
         {
+            heartPointer.enabled = false;
             bow.enabled = false;
             lineRenderer.enabled = false;
+            lineRenderer2.enabled = false;
         }
 
         if(RhandFinger.localRotation.eulerAngles.x < releaseAngle)
@@ -103,7 +133,9 @@ public class CupidBow : MonoBehaviour
         castingBow = false;
         Rigidbody rb = currentHeartPrefab.GetComponent<Rigidbody>();
         rb.isKinematic = false;
-        rb.AddForce(Lhand.position - Rhand.position * 200);
+        rb.AddForce((Lhand.position - Rhand.position).normalized * speed);
+        rb.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+        rb.GetComponent<Arrow>().Shoot();
     }
 
     private bool IsLeftHandInFrontOfRightHand()
