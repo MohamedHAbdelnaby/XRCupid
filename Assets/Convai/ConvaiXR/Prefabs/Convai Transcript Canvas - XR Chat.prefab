@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 6839079296654963938, guid: 2a227c28daac328438a90156a33eda44, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7250611778303013844, guid: 2a227c28daac328438a90156a33eda44, type: 3}
       propertyPath: m_Name
       value: Convai Transcript Canvas - XR Chat

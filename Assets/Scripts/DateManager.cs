@@ -26,4 +26,22 @@ public class DateManager : MonoBehaviour
         convaiInputManager.sendText?.Invoke();
         currentAvatar.GetComponent<ConvaiPlayerInteractionManager>().HandleInputSubmission(testPrompt);
     }
+    [Button]
+    private void TestPromptHidden()
+    {
+        currentAvatar.GetComponent<ConvaiPlayerInteractionManager>().HandleInputSubmissionHidden(testPrompt);
+    }
+
+    public void SendMsg(string message)
+    {
+        convai.SendPlayerText(testPrompt);
+        convaiInputManager.sendText?.Invoke();
+        currentAvatar.GetComponent<ConvaiPlayerInteractionManager>().HandleInputSubmission(message);
+    }
+    public void SendMsgHidden(string message)
+    {
+        //convai.SendPlayerText(testPrompt);
+        //convaiInputManager.sendText?.Invoke();
+        currentAvatar.GetComponent<ConvaiPlayerInteractionManager>().HandleInputSubmissionHidden(message);
+    }
 }

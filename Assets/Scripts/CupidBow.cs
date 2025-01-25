@@ -28,6 +28,8 @@ public class CupidBow : MonoBehaviour
 
     [SerializeField] float speed = 250;
 
+    [SerializeField] GameObject handAnimationPoses;
+
     // Update is called once per frame
     void Update()
     {
@@ -128,6 +130,7 @@ public class CupidBow : MonoBehaviour
         currentHeartPrefab = Instantiate(heartPrefab);
     }
 
+    private bool firstShoot;
     private void ShootBow()
     {
         castingBow = false;
@@ -136,6 +139,12 @@ public class CupidBow : MonoBehaviour
         rb.AddForce((Lhand.position - Rhand.position).normalized * speed);
         rb.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
         rb.GetComponent<Arrow>().Shoot();
+
+        if (!firstShoot)
+        {
+            Manager.Instance.HideIntroHands();
+            firstShoot = true;
+        }
     }
 
     private bool IsLeftHandInFrontOfRightHand()

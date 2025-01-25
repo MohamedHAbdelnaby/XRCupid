@@ -54,7 +54,14 @@ namespace Convai.Scripts.Runtime.Core
             _convaiNPC.SendTextDataAsync(input);
             _convaiChatUIHandler.SendPlayerText(input);
             ClearInputField();
-            Debug.Log("Handle input submission");
+        }
+        public void HandleInputSubmissionHidden(string input)
+        {
+            if (!_convaiNPC.isCharacterActive || string.IsNullOrEmpty(input.Trim())) return;
+            _convaiNPC.InterruptCharacterSpeech();
+            UpdateActionConfig();
+            _convaiNPC.SendTextDataAsync(input);
+            ClearInputField();
         }
 
         public TMP_InputField FindActiveInputField()
