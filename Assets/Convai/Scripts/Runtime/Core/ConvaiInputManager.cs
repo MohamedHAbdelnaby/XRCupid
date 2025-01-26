@@ -53,6 +53,8 @@ namespace Convai.Scripts.Runtime.Core
 
         public static ConvaiInputManager Instance { get; private set; }
 
+        public bool detectSpeech;
+
         private void Awake()
         {
             if (Instance != null)
@@ -124,16 +126,19 @@ namespace Convai.Scripts.Runtime.Core
 
         public void OnTalk(InputAction.CallbackContext context)
         {
-            if (context.performed)
+            if (detectSpeech)
             {
-                talkKeyInteract?.Invoke(true);
-                IsTalkKeyHeld = true;
-            }
+                if (context.performed)
+                {
+                    talkKeyInteract?.Invoke(true);
+                    IsTalkKeyHeld = true;
+                }
 
-            if (context.canceled)
-            {
-                talkKeyInteract?.Invoke(false);
-                IsTalkKeyHeld = false;
+                if (context.canceled)
+                {
+                    talkKeyInteract?.Invoke(false);
+                    IsTalkKeyHeld = false;
+                }
             }
         }
 

@@ -61,6 +61,7 @@ namespace Convai.Scripts.Runtime.Core
             _convaiNPC.InterruptCharacterSpeech();
             UpdateActionConfig();
             _convaiNPC.SendTextDataAsync(input);
+            //_convaiChatUIHandler.SendPlayerText(input);
             ClearInputField();
         }
 

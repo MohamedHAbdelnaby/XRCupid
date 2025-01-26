@@ -13,6 +13,7 @@ public class DateManager : MonoBehaviour
     [SerializeField] ConvaiInputManager convaiInputManager;
     public AvatarData currentAvatar;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,5 +44,9 @@ public class DateManager : MonoBehaviour
         //convai.SendPlayerText(testPrompt);
         //convaiInputManager.sendText?.Invoke();
         currentAvatar.GetComponent<ConvaiPlayerInteractionManager>().HandleInputSubmissionHidden(message);
+    }
+    public void OnTranscriptionUpdated(string transcription)
+    {
+        SendMsg(transcription);
     }
 }
