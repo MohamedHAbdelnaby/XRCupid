@@ -22,6 +22,8 @@ public class DateManager : MonoBehaviour
     [SerializeField] Animator avatarAnimator;
     [SerializeField] private bool avatarWasSpeaking;
     bool firstTranscriptionHappened;
+    bool firstTalkHappened;
+    [SerializeField] GameObject micIcon;
 
     [TextArea(3, 10)]
     public string currentTranscription = "";
@@ -39,10 +41,11 @@ public class DateManager : MonoBehaviour
         {
             SendMsg(currentTranscription);
         }
-        else
+        else if(currentTranscription == "" && firstTranscriptionHappened)
         {
-            firstTranscriptionHappened = true;
+            dictation.Activate();
         }
+        firstTranscriptionHappened = true;
     }
 
     [Button]
@@ -67,6 +70,14 @@ public class DateManager : MonoBehaviour
         }
 
         bool isAvatarSpeaking = avatarAnimator.GetBool("Talk");
+        if (!firstTalkHappened)
+        {
+            if (isAvatarSpeaking)
+            {
+                firstTalkHappened = true;
+            }
+        }
+        micIcon.SetActive(!isAvatarSpeaking && graceRenderer.enabled == true && firstTalkHappened);
 
         if (!isAvatarSpeaking)
         {
@@ -103,7 +114,7 @@ public class DateManager : MonoBehaviour
     public void SendMsg(string message)
     {
         convai.SendPlayerText(message);
-        convaiInputManager.sendText?.Invoke();
+        //convaiInputManager.sendText?.Invoke();
         currentAvatar.GetComponent<ConvaiPlayerInteractionManager>().HandleInputSubmission(message);
     }
     public void SendMsgHidden(string message)

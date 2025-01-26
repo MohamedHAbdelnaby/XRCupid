@@ -89,7 +89,7 @@ public class Manager : MonoBehaviour
             item.enabled = true;
         }
         grace.GetComponent<CapsuleCollider>().enabled = true;
-        dateManager.SendMsgHidden($"Present yourself mentioning my name, {username}, in your salutation, and give me an overview of how are you going to help me with dating advice. Also this is some information about me: {quiz.userInformation}" );
+        dateManager.SendMsgHidden($"Present yourself mentioning my name, {username}, in your salutation, and give me an overview of how are you going to help me with dating advice. Also this is some information about me: {quiz.userInformation}. Please keep your answers around 3 sentences long." );
     }
     [Button]
     public void ShowGraceTest()
@@ -145,6 +145,8 @@ public class Manager : MonoBehaviour
 
     public void LogoHit()
     {
+        HideIntroHands();
+
         //logoScreen.transform.DOMoveY(2, 2).SetEase(Ease.InElastic);
         logoSprites[0].DOFade(0, 2);
         logoSprites[1].DOFade(0, 4).OnComplete(() =>

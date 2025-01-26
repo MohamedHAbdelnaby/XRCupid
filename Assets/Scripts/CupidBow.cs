@@ -146,7 +146,7 @@ public class CupidBow : MonoBehaviour
 
         if (!firstShoot)
         {
-            Manager.Instance.HideIntroHands();
+            //Manager.Instance.HideIntroHands();
             firstShoot = true;
         }
     }
