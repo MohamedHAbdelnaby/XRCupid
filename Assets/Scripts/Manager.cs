@@ -91,6 +91,26 @@ public class Manager : MonoBehaviour
         grace.GetComponent<CapsuleCollider>().enabled = true;
         dateManager.SendMsgHidden($"Present yourself mentioning my name, {username}, in your salutation, and give me an overview of how are you going to help me with dating advice. Also this is some information about me: {quiz.userInformation}" );
     }
+    [Button]
+    public void ShowGraceTest()
+    {
+        StartCoroutine(Co_ShowGraceTest());
+    }
+
+    private IEnumerator Co_ShowGraceTest()
+    {
+        foreach (var item in particleSystems)
+        {
+            item.Play();
+        }
+        yield return new WaitForSeconds(1);
+        foreach (var item in graceRenderers)
+        {
+            item.enabled = true;
+        }
+        grace.GetComponent<CapsuleCollider>().enabled = true;
+        //dateManager.SendMsgHidden($"Present yourself mentioning my name, {username}, in your salutation, and give me an overview of how are you going to help me with dating advice. Also this is some information about me: {quiz.userInformation}");
+    }
 
     public void ShowIntroHands()
     {
@@ -197,6 +217,7 @@ public class Manager : MonoBehaviour
     {
         username = keyboardInputField.text;
         keyboard.gameObject.SetActive(false);
+        ConvaiPlayerDataSO.PlayerName = username;
         ShowGrace();
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47deca9d54168f944b352427b36d0ac6, type: 3}
   m_Name: ConvaiPlayerDataSO
   m_EditorClassIdentifier: 
-  <DefaultPlayerName>k__BackingField: Player
-  <PlayerName>k__BackingField: 
+  <DefaultPlayerName>k__BackingField: User
+  <PlayerName>k__BackingField: User
   <SpeakerID>k__BackingField: 
   <CreateSpeakerIDIfNotFound>k__BackingField: 0

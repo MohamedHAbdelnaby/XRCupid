@@ -1661,7 +1661,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -22824,7 +22824,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -32759,7 +32759,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -44901,6 +44901,10 @@ MonoBehaviour:
   avatarCanvasName: Convai Transcript Canvas - XR Chat(Clone)
   avatarCanvas: {fileID: 0}
   graceRenderer: {fileID: 651419957872997215}
+  dictation: {fileID: 2494780024465153809}
+  avatarAnimator: {fileID: 6886704701137765733}
+  avatarWasSpeaking: 0
+  currentTranscription: 
 --- !u!4 &1757528714
 Transform:
   m_ObjectHideFlags: 0
@@ -44928,24 +44932,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a960272debaf35b4f8df9292e4191044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  witDictation: {fileID: 0}
+  witDictation: {fileID: 2494780024465153809}
   linesBetweenActivations: 1
   activationSeparator: 
   onTranscriptionUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1757528712}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1758366492
 GameObject:
   m_ObjectHideFlags: 0
@@ -46077,7 +46069,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -53658,7 +53650,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -63931,7 +63923,19 @@ MonoBehaviour:
         m_Calls: []
     _onFullTranscription:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1757528713}
+          m_TargetAssemblyTypeName: DateManager, Assembly-CSharp
+          m_MethodName: ReceiveTranscription
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     _onUserPartialTranscription:
       m_PersistentCalls:
         m_Calls: []
@@ -63956,7 +63960,7 @@ MonoBehaviour:
     maxConcurrentRequests: 5
     sendAudioToWit: 1
     customTranscriptionProvider: {fileID: 0}
-    alwaysRecord: 0
+    alwaysRecord: 1
     preferredActivationOffset: -0.5
     transcribeOnly: 0
     pubSubSettings:
@@ -68154,6 +68158,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: enableDynamicResolution
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: dynamicResolutionVersion
       value: 1
       objectReference: {fileID: 0}
@@ -68164,6 +68172,22 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: controllerDrivenHandPosesType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: quest2MaxDynamicResolutionScale
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: quest2MinDynamicResolutionScale
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: quest3MaxDynamicResolutionScale
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: quest3MinDynamicResolutionScale
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69425,6 +69449,11 @@ CapsuleCollider:
   m_Height: 2.2754803
   m_Direction: 1
   m_Center: {x: -0, y: 0.63774014, z: 0}
+--- !u!95 &6886704701137765733 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1535433940726471555, guid: cdb31974488c99f438f965a7b8027bc5, type: 3}
+  m_PrefabInstance: {fileID: 8913016317258304908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7017122737764463587
 MonoBehaviour:
   m_ObjectHideFlags: 0
