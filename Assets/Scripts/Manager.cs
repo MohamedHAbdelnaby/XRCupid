@@ -1,6 +1,6 @@
 using Convai.Scripts.Runtime.PlayerStats;
 using DG.Tweening;
-using Google.Protobuf.WellKnownTypes;
+using Microsoft.MixedReality.Toolkit.Experimental.UI;
 using NaughtyAttributes;
 using System;
 using System.Collections;
@@ -14,8 +14,12 @@ public class Manager : MonoBehaviour
     public static Manager Instance { get; private set; }
 
     [SerializeField] string username = "Lucas";
+
+    //Grace
+    [SerializeField] GameObject grace;
     [SerializeField] SkinnedMeshRenderer[] hands;
     [SerializeField] SkinnedMeshRenderer[] graceRenderers;
+    [SerializeField] ParticleSystem[] particleSystems;
     [field: SerializeField] public ConvaiPlayerDataSO ConvaiPlayerDataSO { get; private set; }
 
     //Logo
@@ -26,9 +30,12 @@ public class Manager : MonoBehaviour
     //Quiz
     [SerializeField] List<QuizQuestion> quizQuestions;
     private int currentQuiz = 0;
+    [SerializeField] Quiz quiz;
 
     //Keyboard
-    [SerializeField] GameObject keyboard;
+    [SerializeField] NonNativeKeyboard keyboard;
+    [SerializeField] Transform centerEyeAnchor;
+    [SerializeField] TMPro.TMP_InputField keyboardInputField;
 
     private void Awake()
     {
@@ -39,14 +46,50 @@ public class Manager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        //keyboard.OnTextSubmittedAction += NameEntered;
+        //keyboard.OnKeyboardValueKeyPressed += KeyPressed;
+    }
+
+    private void KeyPressed(KeyboardValueKey key)
+    {
+        KeyBoardBackspace();
+    }
+
+    public void KeyBoardBackspace()
+    {
+        if (keyboardInputField.text.Length > 0)
+        {
+            keyboardInputField.text = keyboardInputField.text.Substring(0, keyboardInputField.text.Length - 1);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        //keyboard.OnTextSubmittedAction -= NameEntered;
+        //keyboard.OnKeyboardValueKeyPressed -= KeyPressed;
+    }
+
     [Button]
     public void ShowGrace()
     {
+        StartCoroutine(Co_ShowGrace());
+    }
+
+    private IEnumerator Co_ShowGrace()
+    {
+        foreach (var item in particleSystems)
+        {
+            item.Play();
+        }
+        yield return new WaitForSeconds(1);
         foreach (var item in graceRenderers)
         {
             item.enabled = true;
         }
-        dateManager.SendMsgHidden($"Present yourself mentioning my name, {username}, in your salutation, and give me an overview of how are you going to help me with dating advice");
+        grace.GetComponent<CapsuleCollider>().enabled = true;
+        dateManager.SendMsgHidden($"Present yourself mentioning my name, {username}, in your salutation, and give me an overview of how are you going to help me with dating advice. Also this is some information about me: {quiz.userInformation}" );
     }
 
     public void ShowIntroHands()
@@ -116,6 +159,7 @@ public class Manager : MonoBehaviour
         NextQuiz();
     }
 
+    [Button]
     public void NextQuiz()
     {
         StartCoroutine(Co_NextQuiz());
@@ -142,9 +186,18 @@ public class Manager : MonoBehaviour
         ShowKeyboard();
     }
 
+    [Button]
     private void ShowKeyboard()
     {
-        keyboard.SetActive(true);
+        //ShowGrace();
+        keyboard.transform.parent.gameObject.SetActive(true);
+    }
+    [Button]
+    public void NameEntered()
+    {
+        username = keyboardInputField.text;
+        keyboard.gameObject.SetActive(false);
+        ShowGrace();
     }
 }
 

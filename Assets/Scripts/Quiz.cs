@@ -5,7 +5,7 @@ using UnityEngine;
 public class Quiz : MonoBehaviour
 {
     [TextArea(3, 10)]
-    [SerializeField] string userInformation;
+    public string userInformation;
 
     public void ButtonPressedConversation(string text)
     {

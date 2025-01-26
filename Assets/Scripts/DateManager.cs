@@ -12,12 +12,29 @@ public class DateManager : MonoBehaviour
     [SerializeField] string testPrompt = "Hello, how are you?";
     [SerializeField] ConvaiInputManager convaiInputManager;
     public AvatarData currentAvatar;
-
+    [SerializeField] string avatarCanvasName = "Convai Transcript Canvas - XR Chat(Clone)";
+    [SerializeField] private CanvasGroup avatarCanvas;
+    [SerializeField] SkinnedMeshRenderer graceRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         _dictation.Activate();
+        Invoke(nameof(GetCanvasDelayed), 0.2f);
+    }
+
+    private void GetCanvasDelayed()
+    {
+        avatarCanvas = GameObject.Find(avatarCanvasName).GetComponent<CanvasGroup>();
+        avatarCanvas.alpha = 0f;
+    }
+
+    private void Update()
+    {
+        if(avatarCanvas != null)
+        {
+            avatarCanvas.alpha = graceRenderer.enabled? 1f : 0f;
+        }
     }
 
     [Button]
