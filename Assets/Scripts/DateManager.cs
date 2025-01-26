@@ -39,7 +39,13 @@ public class DateManager : MonoBehaviour
     {
         if(currentTranscription != "" && firstTranscriptionHappened)
         {
-            SendMsg(currentTranscription);
+            string originalString = currentTranscription;
+            string stringToRemove = "Hey Facebook";
+
+            // Remove the specific sentence from the original string
+            string modifiedString = originalString.Replace(stringToRemove, "");
+
+            SendMsg(modifiedString);
         }
         else if(currentTranscription == "" && firstTranscriptionHappened)
         {
@@ -113,13 +119,11 @@ public class DateManager : MonoBehaviour
 
     public void SendMsg(string message)
     {
-        convai.SendPlayerText(message);
         //convaiInputManager.sendText?.Invoke();
         currentAvatar.GetComponent<ConvaiPlayerInteractionManager>().HandleInputSubmission(message);
     }
     public void SendMsgHidden(string message)
     {
-        //convai.SendPlayerText(testPrompt);
         //convaiInputManager.sendText?.Invoke();
         currentAvatar.GetComponent<ConvaiPlayerInteractionManager>().HandleInputSubmissionHidden(message);
     }

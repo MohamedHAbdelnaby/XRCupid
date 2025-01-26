@@ -19,19 +19,19 @@ namespace Convai.Scripts.Runtime.Core
         private void OnEnable()
         {
             if (InputManager == null) return;
-            InputManager.sendText += HandleSendText;
-            InputManager.toggleChat += HandleToggleChat;
-            InputManager.talkKeyInteract += HandleVoiceInput;
-            InputManager.talkKeyInteract += HandleNPCInteraction;
+            //InputManager.sendText += HandleSendText;
+            //InputManager.toggleChat += HandleToggleChat;
+            //InputManager.talkKeyInteract += HandleVoiceInput;
+            //InputManager.talkKeyInteract += HandleNPCInteraction;
         }
 
         private void OnDisable()
         {
             if (InputManager == null) return;
-            InputManager.sendText -= HandleSendText;
-            InputManager.toggleChat -= HandleToggleChat;
-            InputManager.talkKeyInteract -= HandleVoiceInput;
-            InputManager.talkKeyInteract -= HandleNPCInteraction;
+            //InputManager.sendText -= HandleSendText;
+            //InputManager.toggleChat -= HandleToggleChat;
+            //InputManager.talkKeyInteract -= HandleVoiceInput;
+            //InputManager.talkKeyInteract -= HandleNPCInteraction;
         }
 
         public void Initialize(ConvaiNPC convaiNPC, ConvaiCrosshairHandler convaiCrosshairHandler, ConvaiChatUIHandler convaiChatUIHandler)
@@ -94,8 +94,8 @@ namespace Convai.Scripts.Runtime.Core
         {
             TMP_InputField inputFieldInScene = FindActiveInputField();
 
-            UpdateCurrentInputField(inputFieldInScene);
-            if (_currentInputField != null && _currentInputField.isFocused && _convaiNPC.isCharacterActive) HandleInputSubmission(_currentInputField.text);
+            //UpdateCurrentInputField(inputFieldInScene);
+            //if (_currentInputField != null && _currentInputField.isFocused && _convaiNPC.isCharacterActive) HandleInputSubmission(_currentInputField.text);
         }
 
         private void HandleVoiceInput(bool listenState)

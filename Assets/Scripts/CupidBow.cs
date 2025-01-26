@@ -102,7 +102,7 @@ public class CupidBow : MonoBehaviour
             if (Physics.Raycast(Lhand.position + direction * 0.1f, direction, out RaycastHit hit, 10, layerMask, QueryTriggerInteraction.Ignore))
             {
                 heartPointer.enabled = true;
-                heartPointer.transform.position = hit.point;
+                heartPointer.transform.position = hit.point - direction * 0.05f;
                 heartPointer.transform.forward = hit.normal;
             }
             else
