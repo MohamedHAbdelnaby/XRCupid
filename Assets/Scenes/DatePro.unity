@@ -1373,6 +1373,7 @@ GameObject:
   - component: {fileID: 126707553}
   - component: {fileID: 126707552}
   - component: {fileID: 126707554}
+  - component: {fileID: 126707555}
   m_Layer: 0
   m_Name: B
   m_TagString: Untagged
@@ -1508,7 +1509,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &126707555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126707550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &128968615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,6 +3519,7 @@ GameObject:
   - component: {fileID: 306646056}
   - component: {fileID: 306646055}
   - component: {fileID: 306646057}
+  - component: {fileID: 306646058}
   m_Layer: 0
   m_Name: D
   m_TagString: Untagged
@@ -3629,7 +3655,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &306646058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306646053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &310882153
 GameObject:
   m_ObjectHideFlags: 0
@@ -6355,6 +6405,7 @@ GameObject:
   - component: {fileID: 538846889}
   - component: {fileID: 538846888}
   - component: {fileID: 538846890}
+  - component: {fileID: 538846891}
   m_Layer: 0
   m_Name: C
   m_TagString: Untagged
@@ -6490,7 +6541,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &538846891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538846886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &539785143
 GameObject:
   m_ObjectHideFlags: 0
@@ -6960,7 +7035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &584341061
 Transform:
   m_ObjectHideFlags: 0
@@ -7907,11 +7982,6 @@ Transform:
   - {fileID: 1664625385}
   m_Father: {fileID: 1051460302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &661927748 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 93879345041507295, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
-  m_PrefabInstance: {fileID: 921075008}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &662891762
 GameObject:
   m_ObjectHideFlags: 0
@@ -10754,7 +10824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lhand: {fileID: 321285326}
   Rhand: {fileID: 1969896564}
-  RhandFinger: {fileID: 661927748}
+  ovrHandR: {fileID: 1051171869}
+  RhandFinger: {fileID: 1394607802}
   releaseAngle: 45
   mainCamera: {fileID: 6029929497233632702}
   heartPrefab: {fileID: 1601300898918577494, guid: 86eaa62f2a0538d4f9b46e8a05b5729e, type: 3}
@@ -10769,6 +10840,9 @@ MonoBehaviour:
   heartPointer: {fileID: 310882154}
   speed: 300
   handAnimationPoses: {fileID: 1320553746}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!4 &891189769
 Transform:
   m_ObjectHideFlags: 0
@@ -10892,6 +10966,7 @@ GameObject:
   - component: {fileID: 906966044}
   - component: {fileID: 906966043}
   - component: {fileID: 906966045}
+  - component: {fileID: 906966046}
   m_Layer: 0
   m_Name: B
   m_TagString: Untagged
@@ -11027,7 +11102,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &906966046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906966041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907678049
 GameObject:
   m_ObjectHideFlags: 0
@@ -13439,7 +13538,7 @@ SkinnedMeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051171868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -13492,7 +13591,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051171868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73eac66b128fc8749a21623225c34541, type: 3}
   m_Name: 
@@ -13577,7 +13676,7 @@ Transform:
   m_GameObject: {fileID: 1051171868}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.964}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14243,7 +14342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1110611687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17406,6 +17505,11 @@ Transform:
   - {fileID: 597667532}
   m_Father: {fileID: 882765218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1394607802 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4628596224827037984, guid: ea16c3c8c1688234fa81a4f39339bf1b, type: 3}
+  m_PrefabInstance: {fileID: 921075008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1399500987
 GameObject:
   m_ObjectHideFlags: 0
@@ -19078,6 +19182,7 @@ GameObject:
   - component: {fileID: 1594893019}
   - component: {fileID: 1594893018}
   - component: {fileID: 1594893020}
+  - component: {fileID: 1594893021}
   m_Layer: 0
   m_Name: A
   m_TagString: Untagged
@@ -19213,7 +19318,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &1594893021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594893016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1595266358
 GameObject:
   m_ObjectHideFlags: 0
@@ -19559,6 +19688,7 @@ GameObject:
   - component: {fileID: 1637351037}
   - component: {fileID: 1637351036}
   - component: {fileID: 1637351038}
+  - component: {fileID: 1637351039}
   m_Layer: 0
   m_Name: C
   m_TagString: Untagged
@@ -19694,7 +19824,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &1637351039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637351034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1643069526
 GameObject:
   m_ObjectHideFlags: 0
@@ -20058,7 +20212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1656264430
 Transform:
   m_ObjectHideFlags: 0
@@ -21388,6 +21542,7 @@ GameObject:
   - component: {fileID: 1746503421}
   - component: {fileID: 1746503420}
   - component: {fileID: 1746503422}
+  - component: {fileID: 1746503423}
   m_Layer: 0
   m_Name: A
   m_TagString: Untagged
@@ -21523,7 +21678,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &1746503423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746503418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1747521891
 GameObject:
   m_ObjectHideFlags: 0
@@ -21773,6 +21952,7 @@ GameObject:
   - component: {fileID: 1758366495}
   - component: {fileID: 1758366494}
   - component: {fileID: 1758366496}
+  - component: {fileID: 1758366497}
   m_Layer: 0
   m_Name: C
   m_TagString: Untagged
@@ -21908,7 +22088,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &1758366497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758366492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1760826822
 GameObject:
   m_ObjectHideFlags: 0
@@ -21959,7 +22163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1762794451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23711,6 +23915,7 @@ GameObject:
   - component: {fileID: 1915527178}
   - component: {fileID: 1915527177}
   - component: {fileID: 1915527179}
+  - component: {fileID: 1915527180}
   m_Layer: 0
   m_Name: B
   m_TagString: Untagged
@@ -23846,7 +24051,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &1915527180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915527175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1930605388
 GameObject:
   m_ObjectHideFlags: 0
@@ -23879,7 +24108,7 @@ Transform:
   m_GameObject: {fileID: 1930605388}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.964}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23892,7 +24121,7 @@ SkinnedMeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930605388}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -23945,7 +24174,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930605388}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73eac66b128fc8749a21623225c34541, type: 3}
   m_Name: 
@@ -25172,6 +25401,7 @@ GameObject:
   - component: {fileID: 2020426293}
   - component: {fileID: 2020426292}
   - component: {fileID: 2020426294}
+  - component: {fileID: 2020426295}
   m_Layer: 0
   m_Name: A
   m_TagString: Untagged
@@ -25307,7 +25537,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 126707555}
+        m_TargetAssemblyTypeName: GrowAnimation, Assembly-CSharp
+        m_MethodName: GrowAnim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRenderer: {fileID: 0}
+--- !u!114 &2020426295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020426290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4456ab2d31d23534c8d96d2c8b14ee15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2030905561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25828,6 +26082,7 @@ MonoBehaviour:
   - {fileID: 271862682}
   - {fileID: 1625511333}
   - {fileID: 369238141}
+  keyboard: {fileID: 1110611686}
 --- !u!4 &2079031747
 Transform:
   m_ObjectHideFlags: 0
@@ -26967,23 +27222,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3453907443211721073, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3453907443211721073, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3453907443211721073, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 655
       objectReference: {fileID: 0}
     - target: {fileID: 3453907443211721073, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 982.5
       objectReference: {fileID: 0}
     - target: {fileID: 3453907443211721073, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -233.5
       objectReference: {fileID: 0}
     - target: {fileID: 3453907443211721074, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_Layer
@@ -27055,23 +27310,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5903101493444367070, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5903101493444367070, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5903101493444367070, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 655
       objectReference: {fileID: 0}
     - target: {fileID: 5903101493444367070, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1637.5
       objectReference: {fileID: 0}
     - target: {fileID: 5903101493444367070, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -233.5
       objectReference: {fileID: 0}
     - target: {fileID: 6032553201096387347, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_Layer
@@ -27183,23 +27438,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7965100877371388063, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7965100877371388063, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7965100877371388063, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 655
       objectReference: {fileID: 0}
     - target: {fileID: 7965100877371388063, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 327.5
       objectReference: {fileID: 0}
     - target: {fileID: 7965100877371388063, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -233.5
       objectReference: {fileID: 0}
     - target: {fileID: 7965100877925655332, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchorMax.y
@@ -27283,7 +27538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7965100879200458318, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 2620
       objectReference: {fileID: 0}
     - target: {fileID: 7965100879200458319, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_Layer
@@ -27303,23 +27558,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8424224107437135783, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8424224107437135783, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8424224107437135783, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 655
       objectReference: {fileID: 0}
     - target: {fileID: 8424224107437135783, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 2292.5
       objectReference: {fileID: 0}
     - target: {fileID: 8424224107437135783, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -233.5
       objectReference: {fileID: 0}
     - target: {fileID: 8424224107969071873, guid: 146baf7aaccab2949a87118ab13da980, type: 3}
       propertyPath: m_Layer
@@ -28602,7 +28857,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2

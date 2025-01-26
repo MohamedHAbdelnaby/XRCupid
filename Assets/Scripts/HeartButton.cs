@@ -22,7 +22,12 @@ public class HeartButton : MonoBehaviour
     [Button]
     public void TestButton()
     {
-        OnButtonSelected.Invoke(GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
+        string text = string.Empty;
+        if (GetComponentInChildren<TMPro.TextMeshProUGUI>())
+        {
+            text = GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
+        }
+        OnButtonSelected.Invoke(text);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,7 +43,12 @@ public class HeartButton : MonoBehaviour
     private void ButtonSelected()
     {
         buttonAlreadyPressed = true;
-        OnButtonSelected.Invoke(GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
+        string text = string.Empty;
+        if (GetComponentInChildren<TMPro.TextMeshProUGUI>())
+        {
+            text = GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
+        }
+        OnButtonSelected.Invoke(text);
         if (buttonRenderer != null)
         {
             StartCoroutine(SelectedColoring());

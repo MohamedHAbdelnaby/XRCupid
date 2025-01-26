@@ -5,6 +5,8 @@ public class CupidBow : MonoBehaviour
 {
     [SerializeField] Transform Lhand;
     [SerializeField] Transform Rhand;
+    [SerializeField] OVRHand ovrHandR;
+
     [SerializeField] Transform RhandFinger;
     [SerializeField] float releaseAngle = 50;
     private bool rightHandWasClosed;
@@ -29,6 +31,8 @@ public class CupidBow : MonoBehaviour
     [SerializeField] float speed = 250;
 
     [SerializeField] GameObject handAnimationPoses;
+
+    [SerializeField] LayerMask layerMask;
 
     // Update is called once per frame
     void Update()
@@ -95,7 +99,7 @@ public class CupidBow : MonoBehaviour
 
 
 
-            if (Physics.Raycast(Lhand.position + direction * 0.1f, direction, out RaycastHit hit, 10))
+            if (Physics.Raycast(Lhand.position + direction * 0.1f, direction, out RaycastHit hit, 10, layerMask, QueryTriggerInteraction.Ignore))
             {
                 heartPointer.enabled = true;
                 heartPointer.transform.position = hit.point;
@@ -114,7 +118,7 @@ public class CupidBow : MonoBehaviour
             lineRenderer2.enabled = false;
         }
 
-        if(RhandFinger.localRotation.eulerAngles.x < releaseAngle)
+        if(RhandFinger.localRotation.eulerAngles.x < releaseAngle || !ovrHandR.IsTracked)
         {
             SetRightHandOpen();
         }

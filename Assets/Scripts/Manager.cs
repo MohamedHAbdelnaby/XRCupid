@@ -1,5 +1,6 @@
 using Convai.Scripts.Runtime.PlayerStats;
 using DG.Tweening;
+using Google.Protobuf.WellKnownTypes;
 using NaughtyAttributes;
 using System;
 using System.Collections;
@@ -25,6 +26,9 @@ public class Manager : MonoBehaviour
     //Quiz
     [SerializeField] List<QuizQuestion> quizQuestions;
     private int currentQuiz = 0;
+
+    //Keyboard
+    [SerializeField] GameObject keyboard;
 
     private void Awake()
     {
@@ -52,8 +56,19 @@ public class Manager : MonoBehaviour
     }
     public void HideIntroHands()
     {
-        hands[0].material.DOFade(0, 1);
-        hands[1].material.DOFade(0, 1);
+        float value = 1;
+        DOTween.To(() => value, x => value = x, 0, 1)
+        .OnUpdate(() =>
+        {
+            hands[0].material.SetFloat("_Opacity", value);
+            hands[1].material.SetFloat("_Opacity", value);
+            hands[0].material.SetFloat("_OutlineOpacity", value);
+            hands[1].material.SetFloat("_OutlineOpacity", value);
+        }).OnComplete(() =>
+        {
+            hands[0].gameObject.SetActive(false);
+            hands[1].gameObject.SetActive(false);
+        });
     }
 
     public void ShowLogo()
@@ -124,6 +139,12 @@ public class Manager : MonoBehaviour
     private void FinishQuiz()
     {
         Debug.Log("Finished quiz");
+        ShowKeyboard();
+    }
+
+    private void ShowKeyboard()
+    {
+        keyboard.SetActive(true);
     }
 }
 
