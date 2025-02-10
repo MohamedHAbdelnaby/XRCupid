@@ -89,7 +89,7 @@ public class Manager : MonoBehaviour
             item.enabled = true;
         }
         grace.GetComponent<CapsuleCollider>().enabled = true;
-        dateManager.SendMsgHidden($"Present yourself mentioning my name, {username}, in your salutation, and give me an overview of how are you going to help me with dating advice. Also this is some information about me: {quiz.userInformation}. Please keep your answers around 3 sentences long." );
+        dateManager.currentAvatar.SendTextDataAsync($"Present yourself mentioning my name, {username}, in your salutation, and give me an overview of how are you going to help me with dating advice. Also this is some information about me: {quiz.userInformation}. Please keep your answers short, ask questions to facilitate dialogue.");
     }
     [Button]
     public void ShowGraceTest()

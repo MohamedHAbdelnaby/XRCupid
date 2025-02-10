@@ -45223,13 +45223,13 @@ MonoBehaviour:
   convai: {fileID: 1673137269}
   testPrompt: Hello, how are you?
   convaiInputManager: {fileID: 1702630152}
-  currentAvatar: {fileID: 6886704701137765729}
+  currentAvatar: {fileID: 6886704701137765725}
   avatarCanvasName: Convai Transcript Canvas - XR Chat(Clone)
-  avatarCanvas: {fileID: 0}
   graceRenderer: {fileID: 651419957872997215}
   dictation: {fileID: 2494780024465153809}
   avatarAnimator: {fileID: 6886704701137765733}
   avatarWasSpeaking: 0
+  chatHandler: {fileID: 0}
   micIcon: {fileID: 92172176}
   currentTranscription: 
 --- !u!4 &1757528714
@@ -69737,17 +69737,6 @@ MonoBehaviour:
   gainBoostDb: 0
   enableAcoustics: 1
   reverbSendDb: 0
---- !u!114 &6886704701137765729 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6709119102579706648, guid: cdb31974488c99f438f965a7b8027bc5, type: 3}
-  m_PrefabInstance: {fileID: 8913016317258304908}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2416854837430619200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 247fc36ca2524089b3dc351f824e6a3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &6886704701137765731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7174655148130557618, guid: cdb31974488c99f438f965a7b8027bc5, type: 3}
@@ -97094,6 +97083,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2079031747}
+  - {fileID: 1757528714}
   - {fileID: 705507995}
   - {fileID: 1182446483}
   - {fileID: 2494780024465153805}
@@ -97101,7 +97091,6 @@ SceneRoots:
   - {fileID: 885437329}
   - {fileID: 1499640156}
   - {fileID: 1453551050}
-  - {fileID: 1757528714}
   - {fileID: 584341061}
   - {fileID: 6029929497233632689}
   - {fileID: 1821693733}
