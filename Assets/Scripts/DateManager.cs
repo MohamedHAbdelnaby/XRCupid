@@ -2,10 +2,8 @@ using Convai.Scripts.Runtime.Core;
 using Convai.Scripts.Runtime.UI;
 using Meta.WitAi.Dictation;
 using NaughtyAttributes;
-using Oculus.Voice;
 using Oculus.Voice.Dictation;
 using ReadyPlayerMe.Core;
-using System;
 using UnityEngine;
 
 public class DateManager : MonoBehaviour
@@ -14,13 +12,14 @@ public class DateManager : MonoBehaviour
     [SerializeField] private ConvaiChatUIHandler convai;
     [SerializeField] string testPrompt = "Hello, how are you?";
     [SerializeField] ConvaiInputManager convaiInputManager;
-    public AvatarData currentAvatar;
+    public ConvaiNPC currentAvatar;
     [SerializeField] string avatarCanvasName = "Convai Transcript Canvas - XR Chat(Clone)";
-    [SerializeField] private CanvasGroup avatarCanvas;
+    private CanvasGroup avatarCanvas;
     [SerializeField] SkinnedMeshRenderer graceRenderer;
     [SerializeField] AppDictationExperience dictation;
     [SerializeField] Animator avatarAnimator;
     [SerializeField] private bool avatarWasSpeaking;
+    [SerializeField] ConvaiChatUIHandler chatHandler;
     bool firstTranscriptionHappened;
     bool firstTalkHappened;
     [SerializeField] GameObject micIcon;
@@ -45,7 +44,9 @@ public class DateManager : MonoBehaviour
             // Remove the specific sentence from the original string
             string modifiedString = originalString.Replace(stringToRemove, "");
 
+            print("sending text to convai avatar");
             SendMsg(modifiedString);
+            currentTranscription = "";
         }
         else if(currentTranscription == "" && firstTranscriptionHappened)
         {
